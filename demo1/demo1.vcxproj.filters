@@ -33,6 +33,18 @@
     <ClCompile Include="MainMenu .cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="VisibleGameObject .cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerPaddle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameBall.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -47,12 +59,30 @@
     <ClInclude Include="MainMenu.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="VisibleGameObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerPaddle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameBall.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="mainmenu.png">
       <Filter>资源文件\images</Filter>
     </Image>
     <Image Include="..\..\..\孤独摇滚-美化包\孤独摇滚-美化包\开始菜单背景\1.png">
+      <Filter>资源文件\images</Filter>
+    </Image>
+    <Image Include="paddle.png">
+      <Filter>资源文件\images</Filter>
+    </Image>
+    <Image Include="GameBall.png">
       <Filter>资源文件\images</Filter>
     </Image>
   </ItemGroup>

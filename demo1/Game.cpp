@@ -2,12 +2,23 @@
 #include "Game.h"
 #include "MainMenu.h"
 #include "SplashScreen.h"
+#include "PlayerPaddle.h"
+#include"GameBall.h"
 void Game::Start(void)
 {
     if (_gameState != Uninitialized)
         return;
 
     _mainWindow.create(sf::VideoMode(1024, 768, 32), "Pang!");
+
+	PlayerPaddle* player1 = new PlayerPaddle();
+	player1->SetPosition((static_cast<float>(SCREEN_WIDTH) / 2), 700);
+
+	GameBall* ball = new GameBall();
+	ball->SetPosition((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2) - 15);
+
+	_gameObjectManager.Add("Paddle1", player1);
+	_gameObjectManager.Add("Ball", ball);
 
     _gameState = Game::ShowingSplash;
 
@@ -26,8 +37,16 @@ bool Game::IsExiting()
         return false;
 }
 
+
+sf::RenderWindow& Game::GetWindow()
+{
+	return _mainWindow;
+}
+
 void Game::GameLoop()
 {
+	sf::Event currentEvent;
+	_mainWindow.pollEvent(currentEvent);
 	switch (_gameState)
 	{
 	case Game::ShowingMenu:
@@ -42,11 +61,14 @@ void Game::GameLoop()
 	}
 	case Game::Playing:
 	{
-		sf::Event currentEvent;
-		while (_mainWindow.pollEvent(currentEvent))
-		{
+
+			
 			_mainWindow.clear(sf::Color(128, 0, 128));
+
+			_gameObjectManager.UpdateAll();
+			_gameObjectManager.DrawAll(_mainWindow);
 			_mainWindow.display();
+
 
 			if (currentEvent.type == sf::Event::Closed) _gameState = Game::Exiting;
 
@@ -54,7 +76,7 @@ void Game::GameLoop()
 			{
 				if (currentEvent.key.code == sf::Keyboard::Escape) ShowMenu();
 			}
-		}
+		
 		break;
 	}
 	}
@@ -83,3 +105,5 @@ void Game::ShowMenu()
 
 Game::GameState Game::_gameState = Uninitialized;
 sf::RenderWindow Game::_mainWindow;
+GameObjectManager Game::_gameObjectManager;
+

@@ -140,20 +140,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameBall.cpp" />
+    <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="MainMenu .cpp" />
     <ClCompile Include="pang.cpp" />
+    <ClCompile Include="PlayerPaddle.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="VisibleGameObject .cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameBall.h" />
+    <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="PlayerPaddle.h" />
     <ClInclude Include="SplashScreen.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="VisibleGameObject.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\孤独摇滚-美化包\孤独摇滚-美化包\开始菜单背景\1.png" />
+    <Image Include="GameBall.png" />
     <Image Include="mainmenu.png" />
+    <Image Include="paddle.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
